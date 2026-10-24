@@ -60,7 +60,7 @@ h1, h2, h3 { margin: 0; line-height: 1; }
 .site-header { position: absolute; top: 0; left: 0; right: 0; z-index: 5; }
 .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 18px; padding-bottom: 18px; }
 .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; min-height: 44px; }
-.brand img { width: 40px; height: 40px; border-radius: 10px; }
+.brand img { flex: none; width: 40px; height: 40px; border-radius: 10px; }
 .brand span { font: 900 24px/1 var(--display); text-transform: uppercase; letter-spacing: .01em; }
 .nav { display: flex; gap: 4px; flex-wrap: wrap; justify-content: flex-end; }
 .nav a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px; text-decoration: none; font-weight: 800; font-size: 15px; color: var(--ink-2); border-radius: 6px; }
@@ -291,3 +291,7 @@ a.soon:hover { color: var(--plum); filter: brightness(.95); }
 .nav a.studio:hover { background: #FAF8F3; transform: scale(1.08) rotate(-5deg); }
 .nav a.studio img { width: 34px; height: 34px; display: block; }
 @media (prefers-reduced-motion: reduce) { .nav a.studio { transition: none; } .nav a.studio:hover { transform: none; } }
+@media (max-width: 440px) {
+  .nav a.studio { width: 38px; height: 38px; min-height: 38px; margin-left: 4px; }
+  .nav a.studio img { width: 30px; height: 30px; }
+}
