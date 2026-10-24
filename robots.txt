@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mathcatsmathcats.github.io/ChromaticDrift/sitemap.xml
+Sitemap: https://makohippo.com/ChromaticDrift/sitemap.xml

@@ -3,7 +3,7 @@
 Website for **Chromatic Drift**, the color-rules puzzle for iPhone and iPad (code name "Chroma", app repo
 `MathCatsMathCats/Chromatic-drift`). Plain HTML and CSS. Nothing to install and nothing to build.
 
-Live at **https://mathcatsmathcats.github.io/ChromaticDrift/** (repo `MathCatsMathCats/ChromaticDrift`, GitHub Pages
+Live at **https://makohippo.com/ChromaticDrift/** (repo `MathCatsMathCats/ChromaticDrift`, GitHub Pages
 from `main`, root folder).
 
 | Page | File |
@@ -50,28 +50,20 @@ In `index.html`:
 
 ## App Store Connect
 
-- **Support URL:** `https://mathcatsmathcats.github.io/ChromaticDrift/support/`
-- **Marketing URL:** `https://mathcatsmathcats.github.io/ChromaticDrift/`. AdMob looks for `app-ads.txt` at the root
-  of that domain, `https://mathcatsmathcats.github.io/app-ads.txt`, which already exists in the
+- **Support URL:** `https://makohippo.com/ChromaticDrift/support/`
+- **Marketing URL:** `https://makohippo.com/ChromaticDrift/`. AdMob looks for `app-ads.txt` at the root
+  of that domain, `https://makohippo.com/app-ads.txt`, which already exists in the
   `MathCatsMathCats.github.io` repo. Keep that file.
-- **Privacy Policy URL:** stays `https://mathcatsmathcats.github.io/ChromaticDrift-privacy/privacy-policy.html`,
+- **Privacy Policy URL:** stays `https://mathcatsmathcats.github.io/ChromaticDrift-privacy/privacy-policy.html` (it redirects to makohippo.com),
   because that address is also built into the app (Settings → Privacy policy). This site links to it.
   Never reuse the names `ChromaticDrift-privacy`, `MakoCatsMath-privacy` or `MathCats-privacy`.
 
-`app-ads.txt` in this folder is a copy for a future custom domain, where AdMob would look for it at the domain root.
+`app-ads.txt` in this folder is only a spare copy: AdMob reads the one at the domain root.
 
-## A custom domain later
+## The domain
 
-`chromaticdrift.com` was taken (checked October 2026). If you buy another domain:
+The site is served at `https://makohippo.com/ChromaticDrift/`: the custom domain `makohippo.com` is set on the root
+repo `MathCatsMathCats.github.io` (DNS at Cloudflare, "DNS only"). Every project site inherits it, and the old
+github.io addresses redirect there. Don't set a custom domain on this repository.
 
-1. Repository **Settings → Pages → Custom domain**: enter it and save.
-2. At the registrar, add A records for `@` to `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`,
-   and a CNAME for `www` to `mathcatsmathcats.github.io`.
-3. When the certificate is ready, tick **Enforce HTTPS**.
-4. Switch the site address in the link-preview tags, `sitemap.xml` and `robots.txt` (replace `example.com`):
-   ```
-   grep -rl 'https://mathcatsmathcats.github.io/ChromaticDrift/' --include='*.html' --include='*.xml' --include='*.txt' . | xargs perl -pi -e 's#https://mathcatsmathcats\.github\.io/ChromaticDrift/#https://example.com/#g'
-   ```
-5. Update the Support and Marketing URLs in App Store Connect.
-
-`404.html` works on both addresses (it picks its base path from the host name).
+`404.html` has a fixed `<base href="/ChromaticDrift/">`, so its links work at any depth.
